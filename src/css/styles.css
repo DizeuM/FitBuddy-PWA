@@ -10926,3 +10926,14 @@ html {
   margin-bottom: -0.75rem !important;
 }
 
+.main-container {
+  min-height: 100vh; /* Garante que o contêiner ocupe pelo menos 100% da altura da viewport */
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa; /* Substitua pela cor de fundo desejada */
+}
+
+.content {
+  flex: 1; /* Faz com que o conteúdo ocupe o espaço disponível */
+}
+

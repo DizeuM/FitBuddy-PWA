@@ -1,312 +1,136 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="author" content="" />
-        <meta name="theme-color" content="#FF650F" />
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="author" content="" />
+    <meta name="theme-color" content="#FF650F" />
 
-        <title>FitBuddy</title>
-        <meta name="description" content="Um aplicativo focado em ajudar os usuários a manterem-se ativos, fornecendo recursos para planejar, monitorar suas atividades físicas e indicar onde pode-se realizar atividades físicas." />
-        <link rel="icon" type="image/x-icon" href="/public/favicon.ico" />   
-        <link rel="manifest" href="/public/manifest.json" />
+    <title>FitBuddy</title>
+    <meta name="description" content="Um aplicativo focado em ajudar os usuários a manterem-se ativos, fornecendo recursos para planejar, monitorar suas atividades físicas e indicar onde pode-se realizar atividades físicas." />
+    <link rel="icon" type="image/x-icon" href="/public/favicon.ico" />   
+    <link rel="manifest" href="/public/manifest.json" />
 
-        <style>
-            @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
-            @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
-            @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap');
-            @import url("/src/css/styles.css");
-        </style>
+    <style>
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+        @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap');
+        @import url("/src/css/styles.css");
 
-        <script src="/src/components/menuHome.js" type="text/javascript" defer></script>
-    </head>
+        /* Estilos para o container #caixa */
+        #caixa {
+            min-height: 100vh; /* Define a altura mínima para ocupar toda a tela */
+            display: flex; /* Permite que o container se estenda por toda a altura da tela */
+            flex-direction: column; /* Define o layout como coluna */
+        }
 
-    <body class="d-flex flex-column h-100">
-        <main class="flex-shrink-0">
+        /* Estilos para o conteúdo dentro do container #caixa */
+        #activity-feed {
+            flex-grow: 1; /* Faz com que o conteúdo se estenda para ocupar todo o espaço disponível */
+            padding-bottom: 100px; /* Espaço no final para evitar corte da última atividade */
+        }
+    </style>
 
-            <menu-component></menu-component>
+    <script src="/src/components/menuHome.js" type="text/javascript" defer></script>
+</head>
 
-            <nav class="px-4 mt-4">
-                <div class="row text-primary d-flex align-items-center">
-                  
-                    <div class="col-2 " onclick="">
-                        <h1 style="font-size:xx-large; font-weight: 700; color: #FF650F;">FitBuddy</h1>
-                    </div>
-            
-                    <div class="col text-end ">
-                        <i class="fa-solid fa-bell" style="font-size: 1.8rem; color: #FF650F;"></i>
-                    </div>
-            
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0 flex-grow-1 d-flex flex-column">
+
+        <menu-component></menu-component>
+
+        <nav class="px-4 mt-4">
+            <div class="row text-primary d-flex align-items-center">
+              
+                <div class="col-2">
+                    <h1 style="font-size:xx-large; font-weight: 700; color: #FF650F;">FitBuddy</h1>
                 </div>
-            </nav>
-            
-            <section class="mt-4" id="">
-                <div class="px-4">
-
-                    <div class="text-light rounded-4" style="background-color: #FF650F;">
-                        <div class="row g-0">
-
-                            <div class="col-2 d-flex align-items-center" >
-                                <i class="fa-solid fa-circle-plus ms-3" style="font-size: 1.8rem;"></i>
-                            </div>
-
-                            <div class="col py-1 mb-n2">
-                                <p style="font-size: small; font-weight: 500;">Continue no foco e adicione uma nova atividade no feed</p>
-                            </div>
-
-                        </div>
-                    </div>
-
+        
+                <div class="col text-end">
+                    <i class="fa-solid fa-bell" style="font-size: 1.8rem; color: #FF650F;"></i>
                 </div>
-            </section>
-
-            <section class="mt-4 " id="">
-                <div class="px-4 pt-4 border-top border-black rounded-top-5" style="background-color: #F4F4F4;">
-
-                    <h2 class="m-0" style=" font-weight: 600;">Atividades</h2>
-
-                    <div class="border border-black rounded-4 px-3 mt-3" style="background-color: white;">
-
-                        <div class="row">
-                            <div class="col-auto py-3">
-                                <i class="fa-solid fa-circle-user" style="font-size: 2.5rem;"></i>
-                            </div>
-                            <div class="col py-3">
-                                <h6 class="m-0" style="font-weight: 600;">Edson Junior</h6>
-                                <p class="m-0" style="font-size: small; font-weight: 600; color: #8F8F8F;">Hoje ás 6:40</p>
-
-                            </div>
-                            <div class="col-auto text-end py-3">
-                                <span class="badge text-light" style="font-weight: 500; background-color: #0F82FF;">Amazfit GTR 2</span>
-                            </div>
+        
+            </div>
+        </nav>
+        
+        <section class="mt-4">
+            <div class="px-4">
+                <div class="text-light rounded-4" style="background-color: #FF650F;">
+                    <div class="row g-0">
+                        <div class="col-2 d-flex align-items-center">
+                            <i id="add-activity" class="fa-solid fa-circle-plus ms-3" style="font-size: 1.8rem;"></i>
                         </div>
-
-                        <h6 class="m-0 mb-2" style="font-weight: 600;">Corrida matutina de 5.2km</h6>
-
-                        <div class="bg-light border border-black rounded-4">
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
+                        <div class="col py-1 mb-n2">
+                            <p style="font-size: small; font-weight: 500;">Continue no foco e adicione uma nova atividade no feed</p>
                         </div>
-
-                        <div class="row pt-2 pb-3">
-
-                            <div class="col-auto list-inline">
-                                <p class="list-inline-item m-0" style="font-size: small; font-weight: 600;">Tempo: </p>
-                                <p class="list-inline-item m-0" style="font-size: small; font-weight: 600; color: #8F8F8F;"> 56m 53s</p>
-                            </div>
-                            <div class="col text-end list-inline">
-                                <p class="list-inline-item m-0" style="font-size: small; font-weight: 600;">Frequência cardíaca: </p>
-                                <p class="list-inline-item m-0" style="font-size: small; font-weight: 600; color: #8F8F8F;"> 118bpm</p>
-                            </div>
-                        </div>
-
                     </div>
-
-                    <div class="border border-black rounded-4 px-3 mt-3" style="background-color: white;">
-
-                        <div class="row">
-                            <div class="col-auto py-3">
-                                <i class="fa-solid fa-circle-user" style="font-size: 2.5rem;"></i>
-                            </div>
-                            <div class="col py-3">
-                                <h6 class="m-0" style="font-weight: 600;">Mateus Dizeu</h6>
-                                <p class="m-0" style="font-size: small; font-weight: 600; color: #8F8F8F;">Hoje ás 5:30</p>
-
-                            </div>
-                            <div class="col-auto text-end py-3">
-                                <span class="badge text-light" style="font-weight: 500; background-color: #0F82FF;">Apple watch SE</span>
-                            </div>
-                        </div>
-
-                        <h6 class="m-0 mb-2" style="font-weight: 600;">Treino com peso matutino</h6>
-
-                        <div class="row pt-2 pb-3">
-
-                            <div class="col-auto list-inline">
-                                <p class="list-inline-item m-0" style="font-size: small; font-weight: 600;">Tempo: </p>
-                                <p class="list-inline-item m-0" style="font-size: small; font-weight: 600; color: #8F8F8F;">  65m 45s </p>
-                            </div>
-                            <div class="col text-end list-inline">
-                                <p class="list-inline-item m-0" style="font-size: small; font-weight: 600;">Frequência cardíaca: </p>
-                                <p class="list-inline-item m-0" style="font-size: small; font-weight: 600; color: #8F8F8F;"> 109bpm</p>
-                            </div>
-                        </div>
-
-                    </div>
-                    
-                    <div class="border border-black rounded-4 px-3 mt-3" style="background-color: white;">
-
-                        <div class="row">
-                            <div class="col-auto py-3">
-                                <i class="fa-solid fa-circle-user" style="font-size: 2.5rem;"></i>
-                            </div>
-                            <div class="col py-3">
-                                <h6 class="m-0" style="font-weight: 600;">André Luis</h6>
-                                <p class="m-0" style="font-size: small; font-weight: 600; color: #8F8F8F;">Ontem ás 20:10</p>
-                            </div>
-                        </div>
-
-                        <h6 class="m-0 mb-2" style="font-weight: 600;">Treino com peso noturno</h6>
-
-                        <div class="row pb-3">
-                            <div class="col-auto list-inline">
-                                <p class="list-inline-item m-0" style="font-size: small; font-weight: 600;">Tempo: </p>
-                                <p class="list-inline-item m-0" style="font-size: small; font-weight: 600; color: #8F8F8F;">  73m 23s </p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="border border-black rounded-4 px-3 mt-3" style="background-color: white;">
-
-                        <div class="row">
-                            <div class="col-auto py-3">
-                                <i class="fa-solid fa-circle-user" style="font-size: 2.5rem;"></i>
-                            </div>
-                            <div class="col py-3">
-                                <h6 class="m-0" style="font-weight: 600;">Vitoria das Dores</h6>
-                                <p class="m-0" style="font-size: small; font-weight: 600; color: #8F8F8F;">Ontem ás 19:20</p>
-
-                            </div>
-                        </div>
-
-                        <h6 class="m-0 mb-2" style="font-weight: 600;">Corrida noturna de 3km</h6>
-
-                        <div class="bg-light border border-black rounded-4">
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                        </div>
-
-                        <div class="row pt-2 pb-3">
-
-                            <div class="col-auto list-inline">
-                                <p class="list-inline-item m-0" style="font-size: small; font-weight: 600;">Tempo: </p>
-                                <p class="list-inline-item m-0" style="font-size: small; font-weight: 600; color: #8F8F8F;"> 56m 53s</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="border border-black rounded-4 px-3 mt-3" style="background-color: white;">
-
-                        <div class="row">
-                            <div class="col-auto py-3">
-                                <i class="fa-solid fa-circle-user" style="font-size: 2.5rem;"></i>
-                            </div>
-                            <div class="col py-3">
-                                <h6 class="m-0" style="font-weight: 600;">João Pedro</h6>
-                                <p class="m-0" style="font-size: small; font-weight: 600; color: #8F8F8F;">17/04 ás 6:30</p>
-
-                            </div>
-                            <div class="col-auto text-end py-3">
-                                <span class="badge text-light" style="font-weight: 500; background-color: #0F82FF;">Apple watch PRO</span>
-                            </div>
-                        </div>
-
-                        <h6 class="m-0 mb-2" style="font-weight: 600;">Treino com peso matutino</h6>
-
-                        <div class="row pt-2 pb-3">
-
-                            <div class="col-auto list-inline">
-                                <p class="list-inline-item m-0" style="font-size: small; font-weight: 600;">Tempo: </p>
-                                <p class="list-inline-item m-0" style="font-size: small; font-weight: 600; color: #8F8F8F;">  55m 58s </p>
-                            </div>
-                            <div class="col text-end list-inline">
-                                <p class="list-inline-item m-0" style="font-size: small; font-weight: 600;">Frequência cardíaca: </p>
-                                <p class="list-inline-item m-0" style="font-size: small; font-weight: 600; color: #8F8F8F;"> 118bpm</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="border border-black rounded-4 px-3 mt-3" style="background-color: white;">
-
-                        <div class="row">
-                            <div class="col-auto py-3">
-                                <i class="fa-solid fa-circle-user" style="font-size: 2.5rem;"></i>
-                            </div>
-                            <div class="col py-3">
-                                <h6 class="m-0" style="font-weight: 600;">Abynadark</h6>
-                                <p class="m-0" style="font-size: small; font-weight: 600; color: #8F8F8F;">16/04 ás 18:30</p>
-                            </div>
-                        </div>
-    
-                        <h6 class="m-0 mb-2" style="font-weight: 600;">Treino com peso noturno</h6>
-    
-                        <div class="row pb-3">
-                            <div class="col-auto list-inline">
-                                <p class="list-inline-item m-0" style="font-size: small; font-weight: 600;">Tempo: </p>
-                                <p class="list-inline-item m-0" style="font-size: small; font-weight: 600; color: #8F8F8F;">  66m 13s </p>
-                            </div>
-                        </div>
-    
-                    </div>
-
-                    <div class="border border-black rounded-4 px-3 mt-3" style="background-color: white;">
-
-                        <div class="row">
-                            <div class="col-auto py-3">
-                                <i class="fa-solid fa-circle-user" style="font-size: 2.5rem;"></i>
-                            </div>
-                            <div class="col py-3">
-                                <h6 class="m-0" style="font-weight: 600;">Kauã Rameh</h6>
-                                <p class="m-0" style="font-size: small; font-weight: 600; color: #8F8F8F;">16/04 ás 6:40</p>
-
-                            </div>
-                            <div class="col-auto text-end py-3">
-                                <span class="badge text-light" style="font-weight: 500; background-color: #0F82FF;">Amazfit GTR</span>
-                            </div>
-                        </div>
-
-                        <h6 class="m-0 mb-2" style="font-weight: 600;">Corrida vespertina de 4.5km</h6>
-
-                        <div class="bg-light border border-black rounded-4">
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                        </div>
-
-                        <div class="row pt-2 pb-3">
-
-                            <div class="col-auto list-inline">
-                                <p class="list-inline-item m-0" style="font-size: small; font-weight: 600;">Tempo: </p>
-                                <p class="list-inline-item m-0" style="font-size: small; font-weight: 600; color: #8F8F8F;"> 70m 40s</p>
-                            </div>
-                            <div class="col text-end list-inline">
-                                <p class="list-inline-item m-0" style="font-size: small; font-weight: 600;">Frequência cardíaca: </p>
-                                <p class="list-inline-item m-0" style="font-size: small; font-weight: 600; color: #8F8F8F;"> 128bpm</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="text-center text-white">
-                        <div class="mt-4">.</div>
-                        <div class="mt-4">.</div>
-                    </div>
-                
                 </div>
-                
-            </section>
-        
-        </main>
-        
-        <script type="module">
-            if (typeof navigator.serviceWorker !== 'undefined') {
-              navigator.serviceWorker.register('/public/sw.js')
-            }
-        </script>
+            </div>
+        </section>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <script src="/src/js/scripts.js"></script>
-        
-    </body>
+        <section class="mt-4 flex-grow-1" id="caixa">
+            <div id="activity-feed" class="px-4 pt-4 border-top border-black rounded-top-5" style="background-color: #F4F4F4;">
+                <h2 class="m-0" style="font-weight: 600;">Atividades</h2>
+                <div id="textosumir" class="text-center py-5" style="margin-top: 10px;" hidden>
+                    <p class="m-0">Parece que não há registros de atividades.</p>
+                    <p class="m-0">Cadastre uma já.</p>
+                    <img src="src/assets/academia.png" alt="Imagem de atividade" style="width: 170px; height: auto;">
+                </div>
+            </div>
+        </section>
+    
+    </main>
+
+    <div class="modal fade" id="activityModal" tabindex="-1" aria-labelledby="activityModalLabel" aria-hidden="true" style="margin-top: -160px;">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="activityModalLabel">Adicionar Nova Atividade</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="activityForm">
+                        <div class="mb-3">
+                            <label for="activityType" class="form-label">Tipo de Atividade</label>
+                            <select class="form-select" id="activityType" required>
+                                <option value="Treino com peso">Treino com peso</option>
+                                <option value="Corrida">Corrida</option>
+                                <option value="Pedalada">Pedalada</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="deviceType" class="form-label">Dispositivo</label>
+                            <select class="form-select" id="deviceType" required>
+                                <option value="Apple Watch SE">Apple Watch SE</option>
+                                <option value="Apple Watch PRO">Apple Watch PRO</option>
+                                <option value="Amazfit GTR">Amazfit GTR</option>
+                                <option value="Nenhum">Nenhum</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="activityTime" class="form-label">Tempo de Atividade (minutos)</label>
+                            <input type="number" class="form-control" id="activityTime" min="1" required>
+                        </div>
+                        <!-- Novo campo para quilômetros percorridos -->
+                        <div id="kmField" class="mb-3" style="display: none;">
+                            <label for="kilometers" class="form-label">Quilômetros Percorridos</label>
+                            <input id="activityKm" type="number" class="form-control" min="0">
+                        </div>
+                        <button type="submit" class="btn btn-warning text-white">Salvar Atividade</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <script type="module">
+        if (typeof navigator.serviceWorker !== 'undefined') {
+            navigator.serviceWorker.register('/public/sw.js')
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="/src/js/scripts.js"></script>
+    
+</body>
 </html>
